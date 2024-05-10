@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.proyect {
+  width: 100vw;
+  height: 100vh;
+  font-family: arial;
+  background-color: #4ccae0;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+

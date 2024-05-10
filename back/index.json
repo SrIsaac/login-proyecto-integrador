@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "nombre": "admin",
+      "apellido": "admin",
+      "usuario": "admin",
+      "correo": "correo@correo.com",
+      "contrasena": "12345",
+      "id": "bf51"
+    },
+    {
+      "id": "24fb",
+      "nombre": "isaac",
+      "apellido": "palacio",
+      "usuario": "isaacxz8",
+      "correo": "correo@correo.com",
+      "contrasena": "12345"
+    },
+    {
+      "id": "366e",
+      "nombre": "raule",
+      "apellido": "palacio",
+      "usuario": "raul",
+      "correo": "correo@gmail.com",
+      "contrasena": "123345"
+    }
+  ]
+}
