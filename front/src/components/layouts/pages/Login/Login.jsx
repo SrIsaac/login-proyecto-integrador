@@ -3,7 +3,7 @@ import Inputs from "../../../helpers/Inputs";
 import Title from "../../../helpers/Title";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import './Login.css';
 let urlUsuario = "http://localhost:3000/user";
@@ -20,8 +20,12 @@ function Login() {
     let resultado = await axios.get(urlUsuario);
     setEstadoUsuario(resultado.data);
   }
-  backUsers()
 
+  useEffect(()=>{
+    backUsers()
+  console.log(backUsers());
+    },[]);
+  
 
   function buscarUser() {
      return getEstadoUsuario.some((data) => data.usuario === getUsuario);

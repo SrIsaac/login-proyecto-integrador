@@ -23,6 +23,22 @@
       "usuario": "raul",
       "correo": "correo@gmail.com",
       "contrasena": "123345"
+    },
+    {
+      "id": "f10a",
+      "nombre": "alex",
+      "apellido": "flores",
+      "usuario": "alexflores",
+      "correo": "correo@correo.com",
+      "contrasena": "123445"
+    },
+    {
+      "id": "ab69",
+      "nombre": "ledi",
+      "apellido": "porteña",
+      "usuario": "leidi23",
+      "correo": "leidi@correo.com",
+      "contrasena": "7654"
     }
   ]
 }

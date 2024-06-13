@@ -1,6 +1,6 @@
-function Inputs ({Type,Placeholder}){
+function Inputs ({type,placeholder,handleOnChange}){
     return(
-        <input className="controls" type={Type} placeholder={Placeholder} />
+        <input className="controls" type={type} placeholder={placeholder} onChange={handleOnChange} />
     )
 }
 

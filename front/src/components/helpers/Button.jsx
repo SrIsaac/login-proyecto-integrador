@@ -1,6 +1,6 @@
-function Button ({Class,Text}){
+function Button ({handleOnclick,Class,Text}){
     return(
-        <button className={Class} type="button">{Text}</button>
+        <button onClick={handleOnclick} className={Class} type="button">{Text}</button>
     )
 }
 export default Button
