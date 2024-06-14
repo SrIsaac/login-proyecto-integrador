@@ -1,0 +1,369 @@
+body {
+    background-color: #454647;
+    margin: 0; 
+    overflow-x: hidden; 
+  }
+  
+  .home-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px; 
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+  }
+  
+  .navbar {
+    position: relative;
+    margin: 0 auto;
+    bottom: 15px;
+    border-radius: 0 0 100px 100px;
+    background: #371f09;
+    text-align: center;
+    width: 100%;
+    height: 125px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    height: 100%;  
+  }
+  
+  .nav-perfil,
+  .nav-salir {
+    background-image: linear-gradient(45deg, #ff0000, #ffb700);
+    border-radius: 10px;
+    padding: 10px 20px; 
+  }
+  
+  .nav-perfil a,
+  .nav-salir a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .nav-salir {
+    width: 10%;
+    background-color: rgb(131, 66, 5);
+    color: #333; 
+  }
+  .nav-link{
+    width: 10%;
+    background-image: linear-gradient(45deg, #ff0000, #ffb700);
+    border-radius: 10px;
+    padding: 10px 20px; 
+  }
+
+  .nav-link:hover{
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+  
+  .home-container h1 {
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    font-family: fangsong;
+    color: #db7e26; 
+    text-align: center; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    background: linear-gradient(to right, #7c480d, #f7f316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .descripcion {
+    font-size: 12px;
+  }
+  
+  .mangas-grid {
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 0px;
+    justify-content: end; 
+  }
+  
+  .card {
+    position: relative;
+    width: 190px;
+    height: 254px;
+    background: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px; /* Borde redondeado */
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-clip: padding-box;
+  }
+  
+  .manga-card {
+    position: relative;
+    width: 190px;
+    height: 254px;
+    background: linear-gradient(45deg, #330808, #3a2c09);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px; /* Borde redondeado */
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-clip: padding-box;
+  }
+  
+  .card::before, .manga-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: 1;
+    background: linear-gradient(45deg, #330808, #3a2c09); 
+    border-radius: inherit; 
+  }
+  
+  .card > *, .manga-card > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+  
+  .card img {
+    position: absolute;
+    z-index: 3;
+    scale: 0.8;
+    opacity: 0.25;
+    transition: 0.5s;
+  }
+  
+  .card:hover img {
+    scale: 0.5;
+    opacity: 0.9;
+    transform: translateY(-70px);
+  }
+  
+  .card .content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
+  }
+  
+  .card:hover .content {
+    transform: scale(1);
+    bottom: 25px;
+  }
+  
+  .content .title {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .content .title span {
+    font-weight: 300;
+    font-size: 0.70em;
+  }
+  
+  .content .sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .sci li {
+    list-style: none;
+  }
+  
+  .sci li .fa-brands {
+    width: 14px;
+  }
+  
+  .sci li .fa-facebook {
+    width: 10px;
+  }
+  
+  .sci li a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  
+  .sci li a:hover {
+    fill: currentColor;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .manga-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .manga-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .manga-image:hover img {
+    transform: scale(1.1);
+  }
+  
+  .manga-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    transform: scale(0);
+    transition: transform 0.5s;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+  
+  .manga-card:hover .manga-details {
+    transform: scale(1);
+    bottom: 25px;
+  }
+  
+  .manga-details h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .manga-details p {
+    margin: 5px 0;
+  }
+  
+  .manga-sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .manga-sci li {
+    list-style: none;
+  }
+  
+  .manga-sci li a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  
+  .manga-sci li a:hover {
+    fill: currentColor;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .searchBox {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+  }
+  
+  .searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #ff0000, #ffb700);
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  }
+  /*hover effect*/
+  button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+  /*button pressing effect*/
+  button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .searchInput {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: #ff5900;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+  }
+  
+  

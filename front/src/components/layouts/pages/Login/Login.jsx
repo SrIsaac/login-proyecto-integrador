@@ -10,7 +10,7 @@ let urlUsuario = "http://localhost:3000/user";
 
 
 function Login() {
-  
+
   const [getUsuario, setUsuario] = useState("");
   const [getContrasena, setContrasena] = useState("");
   const [getEstadoUsuario, setEstadoUsuario] = useState([]);
@@ -21,23 +21,23 @@ function Login() {
     setEstadoUsuario(resultado.data);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     backUsers()
-  console.log(backUsers());
-    },[]);
-  
+    console.log(backUsers());
+  }, []);
+
 
   function buscarUser() {
-     return getEstadoUsuario.some((data) => data.usuario === getUsuario);
-    }
+    return getEstadoUsuario.some((data) => data.usuario === getUsuario);
+  }
   function buscarContra() {
-     return getEstadoUsuario.some((data) => data.contrasena === getContrasena);
-    }
+    return getEstadoUsuario.some((data) => data.contrasena === getContrasena);
+  }
 
-    function registrarUsuario() {
+  function registrarUsuario() {
     if ((buscarUser()) && (buscarContra())) {
       redireccion("/home");
-    } else {  
+    } else {
       alert("Usuario NO existe");
     }
   }
@@ -63,17 +63,17 @@ function Login() {
             setContrasena(e.target.value);
           }}
         />
-        
+
         {/* <Button Class={"buttons"} Text={"Iniciar sesión"}  /> */}
         <button className="buttons" onClick={registrarUsuario}>
           Iniciar sesión
         </button>
-    
+
       </section>
       <Link to="/register">
         <Button Class={"buttons-two"} Text={"Registrarse"} />
       </Link>
-  
+
     </div>
   );
 }
