@@ -38,7 +38,8 @@
 }
 
 .imagen {
-    width: 100%;
+    width: 80%;
+    height: 25vh;
 }
 
 .titulo {

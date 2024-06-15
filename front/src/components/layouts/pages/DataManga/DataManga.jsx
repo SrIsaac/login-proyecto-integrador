@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom"
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./DataManga.css"
@@ -8,7 +7,7 @@ const urlMangas = 'http://localhost:3000/mangas/';
 
 
 function DataManga() {
-    const [imagen,setImagen]=useState("");
+    const [imagen, setImagen] = useState("");
     const [titulo, setTitulo] = useState("");
     const [fecha, setFecha] = useState("");
     const [precio, setPrecio] = useState("");
@@ -31,12 +30,12 @@ function DataManga() {
         usuarioID()
     }, [])
 
-    
-    const redireccion=useNavigate();
 
-    
-    function eliminarManga(id,titulo){
-        console.log("EL ID:"+ id)
+    const redireccion = useNavigate();
+
+
+    function eliminarManga(id, titulo) {
+        console.log("EL ID:" + id)
         Swal.fire({
             title: "Está seguro que desea eliminar el managa " + titulo + " ?",
             text: "No se puede reversar esta acción!",
@@ -45,23 +44,23 @@ function DataManga() {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Eliminar",
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              confirmar(id);
-              Swal.fire({
-                title: "Eliminado!",
-                text: "El manga se eliminó correctamente.",
-                icon: "success",
-              });
+                confirmar(id);
+                Swal.fire({
+                    title: "Eliminado!",
+                    text: "El manga se eliminó correctamente.",
+                    icon: "success",
+                });
+                redireccion("/home")
             }
-          });
+        });
     }
-    async function confirmar(id){
-        await axios.delete(urlMangas+id)
-        redireccion("/home")
+    async function confirmar(id) {
+        await axios.delete(urlMangas + id)
 
     }
-    
+
     return (
         <div className="contenedor">
 
@@ -72,10 +71,10 @@ function DataManga() {
                     <h3 className="titulo">{titulo}</h3>
                     <span className="fecha">{fecha}</span>
                     <span className="fecha">{`$ ${precio}`}</span>
-                    <p  className="fecha">{descripcion}</p>
+                    <p className="fecha">{descripcion}</p>
                     <div className='contenedor-btn'>
-                        <center><button className="button" onClick={()=>eliminarManga(dataId,titulo)} >Borrar</button></center>
-                        <center><Link className='Link'>Actualizar</Link></center>
+                        <center><button className="button" onClick={() => eliminarManga(dataId, titulo)} >Borrar</button></center>
+                        <center><Link to={"/actualizar/" + dataId} className='Link'>Actualizar</Link></center>
 
                     </div>
                     <center><Link to={"/home"} className='Link'>Regresar</Link></center>

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 import axios from "axios";
 import "./RegisterProduct.css";
 let urlUsuario = "http://localhost:3000/mangas";
@@ -14,6 +14,8 @@ function RegisterProduct() {
     const [dataProducts,setDataProducts]=useState([]);
 
     const [base64Image, setBase64Image] = useState('');
+
+    const redireccion = useNavigate();
 
     async function bringProducts(){
         let resultado = await axios.get(urlUsuario);
@@ -33,10 +35,15 @@ function RegisterProduct() {
         if (buscarProducts()) {
             alert("Producto ya agregado")
         }else{
-            captureProduct();
-            
-            alert("Producto agragdo :D")
-            // redireccion("/Home");
+            captureProduct()
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Producto Agregado correctamente :D",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            redireccion("/home");
         }
     }
 
@@ -71,13 +78,13 @@ function RegisterProduct() {
         <div className="container">
             <div className="container-form">
                 <form className="form">
-                    <input className="input" type="text" placeholder="Titulo" onChange={(e) => {setTitulo(e.target.value)}}/>
-                    <input className="input" type="date" placeholder="Año" onChange={(e) => {setFecha(e.target.value)}}/>
-                    <input className="input" type="number" placeholder="Precio" onChange={(e) => {setPrecio(e.target.value)}}/>
-                    <textarea className="textarea" placeholder="Descripcion" onChange={(e) => {setDescripcion(e.target.value)}}></textarea>
+                    <input className="input" type="text" placeholder="Titulo" onChange={(e) => {setTitulo(e.target.value)}} required/>
+                    <input className="input" type="date" placeholder="Año" onChange={(e) => {setFecha(e.target.value)}} required/>
+                    <input className="input" type="number" placeholder="Precio" onChange={(e) => {setPrecio(e.target.value)}} required/>
+                    <textarea className="textarea" placeholder="Descripcion" onChange={(e) => {setDescripcion(e.target.value)}} required></textarea>
                     <input className="input" type="file" placeholder="Imagen" onChange={handleFileChange} />
                     <div className='container-btn'>
-                        <center><button className="button" onClick={addProduct}>Guardar</button></center>
+                        <center><button className="button" type='button' onClick={addProduct}>Guardar</button></center>
                         <center><Link to={"/home"} className='Link'>Regresar</Link></center>
 
                     </div>

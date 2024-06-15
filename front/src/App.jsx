@@ -4,6 +4,7 @@ import Home from "./components/layouts/pages/Home/Home"
 import Register from "./components/layouts/pages/Register/Register";
 import RegisterProduct from "./components/layouts/pages/RegiterProduct/RegisterProduct";
 import DataManga from "./components/layouts/pages/DataManga/DataManga";
+import ActualizarManga from "./components/layouts/pages/updateManga/ActualizarManga";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path:"/data/:id",
     element:<DataManga/>
+  },
+  {
+    path:"/actualizar/:id",
+    element: <ActualizarManga/>
   },
 ]);
 
