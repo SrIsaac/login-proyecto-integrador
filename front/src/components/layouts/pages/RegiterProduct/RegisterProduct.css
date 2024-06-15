@@ -36,10 +36,12 @@
     height: 450px;
 }
 
-.button {
+.button,
+.Link {
+    text-decoration: none;
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 75%;
     background: #ff5900;
     color: black;
     padding: 0.7em 5.5em;
@@ -52,13 +54,17 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.Link:hover {
     border: 2px solid #ff5900;
     background: #00000000;
     color: #ff5900;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
 }
 
-.button:active {
+.button:active,
+.Link:active {
     border: 2px solid #66da4300;
     background: #ff5900;
     color: black;
@@ -111,4 +117,9 @@
     border-bottom: 1px solid #ff5900;
     background-color: transparent;
     color: white;
+}
+
+.container-btn{
+    display: flex;
+    gap: 10px;
 }

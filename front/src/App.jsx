@@ -3,6 +3,7 @@ import Login from "./components/layouts/pages/Login/Login";
 import Home from "./components/layouts/pages/Home/Home"
 import Register from "./components/layouts/pages/Register/Register";
 import RegisterProduct from "./components/layouts/pages/RegiterProduct/RegisterProduct";
+import DataManga from "./components/layouts/pages/DataManga/DataManga";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
     element: <Register/>,
   },
   {
-    path:"/manga",
-    element:<RegisterProduct/>
+    path: "/manga",
+    element: <RegisterProduct/>,
+  },
+  {
+    path:"/data/:id",
+    element:<DataManga/>
   },
 ]);
 

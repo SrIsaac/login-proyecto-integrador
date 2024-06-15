@@ -15,8 +15,6 @@ function RegisterProduct() {
 
     const [base64Image, setBase64Image] = useState('');
 
-    const redireccion=useNavigate();
-
     async function bringProducts(){
         let resultado = await axios.get(urlUsuario);
         setDataProducts(resultado.data);
@@ -78,7 +76,11 @@ function RegisterProduct() {
                     <input className="input" type="number" placeholder="Precio" onChange={(e) => {setPrecio(e.target.value)}}/>
                     <textarea className="textarea" placeholder="Descripcion" onChange={(e) => {setDescripcion(e.target.value)}}></textarea>
                     <input className="input" type="file" placeholder="Imagen" onChange={handleFileChange} />
-                    <center><button className="button" onClick={addProduct}>Guardar</button></center>
+                    <div className='container-btn'>
+                        <center><button className="button" onClick={addProduct}>Guardar</button></center>
+                        <center><Link to={"/home"} className='Link'>Regresar</Link></center>
+
+                    </div>
                 </form>
 
             </div>
